@@ -1,4 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddControllers();  //Az API Controllerekhez kell 
+builder.Services.AddEndpointsApiExplorer();   //A Swaggerhez kell
+builder.Services.AddSwaggerGen();
 
 // Add services to the container.
 
@@ -21,6 +24,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.UseDefaultFiles();
+app.MapControllers();
 app.UseStaticFiles();
 
 app.MapControllers();
